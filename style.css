@@ -1,0 +1,35 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  color: #fff;
+}
+
+.div0 {
+  width: 1500px;
+  padding: 100px;
+  margin: 0 auto;
+  background-color: #ccc;
+}
+
+.div1 {
+  width: 1000px;
+  padding: 50px;
+  background-color: red;
+  margin: 0 auto;
+}
+
+.div2 {
+  width: 200px;
+  height: 200px;
+  background-color: blue;
+}
+
+.div3 {
+  width: 200px;
+  height: 200px;
+  background-color: green;
+}
