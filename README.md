@@ -1,3 +1,65 @@
+# Especificidade 
+- O id é mais específico que uma classe que, por sua vez,  
+é mais específica que um elemento 
+
+## Estilo inline 
+- Precedência máxima 
+
+## Id
+- Maior precedência após o estilo inline 
+
+## Classe, pseudo classe, atributo 
+- Maior precedência após o id 
+
+## Elemento, pseudo elemento 
+- Maior precedência após Classe, pseudo classe ou atributo 
+
+# Herança 
+- Elementos herdam estilos de seus containers 
+- Se `body` tiver `color: red`, todos os textos dentro  
+dele serão vermelhos, exceto se configurados com outro  
+`color` 
+- Nem todas as propriedades são herdadas. Margins e  
+paddings são um exemplo 
+
+## `inherit` 
+- Valor que define que a propriedade será herdada de seu  
+container 
+
+Exemplo de propriedades herdadas do container (pai): 
+
+```CSS
+p {
+  margin: inherit;
+  padding: inherit;
+}
+```
+
+# Resets 
+- Reduzem a inconsistência de renderização de elementos  
+entre browsers 
+- Tende a deixar o código redundante, caso não seja avaliado  
+quais propriedades são realmente necessárias 
+  - Alguns resets, contém, por exemplo, elementos de correções  
+  de bugs de browsers antigos como o IE6/7. Inútil caso a  
+  aplicação não pretende dar suporte a estes navegadores
+  - Font-size geralmente costuma ter que ser reescrito 
+
+## [css reset](https://meyerweb.com/eric/tools/css/reset/)
+
+## [normalize](https://necolas.github.io/normalize.css/)
+
+# Text 
+
+## `text-transform: uppercase;` 
+- Transforma todas as letras do texto em maiúsculas 
+
+## `text-transform: lowercase;` 
+- Transforma todas as letras do texto em minúsculas 
+
+## `text-transform: capitalize;` 
+- Transforma todas as iniciais das palavras em maiúsculas 
+
 # Position 
 
 ## `position: static;`
@@ -82,4 +144,4 @@ model, usada para calcular larguras e alturas dos elementos
 ## `border-box`
 - Valor usado para que o padding e border de um elemento  
 sejam considerados na altura e largura de um elemento 
-- Desconsidera a propriedade `margin`
+- Desconsidera a propriedade `margin` 
