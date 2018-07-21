@@ -60,6 +60,12 @@ quais propriedades são realmente necessárias
 ## `text-transform: capitalize;` 
 - Transforma todas as iniciais das palavras em maiúsculas 
 
+# Unidades de medida 
+
+## `em`
+- É útil em casos onde é necessário mudar o valor das  
+fontes de cada elemento 
+
 # Position 
 
 ## `position: static;`

@@ -1,35 +1,11 @@
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
+div {
+  font-size: 1.875em;
 }
 
-body {
-  color: #fff;
+h1 {
+  font-size: 0.666em;
 }
 
-.div0 {
-  width: 1500px;
-  padding: 100px;
-  margin: 0 auto;
-  background-color: #ccc;
-}
-
-.div1 {
-  width: 1000px;
-  padding: 50px;
-  background-color: red;
-  margin: 0 auto;
-}
-
-.div2 {
-  width: 200px;
-  height: 200px;
-  background-color: blue;
-}
-
-.div3 {
-  width: 200px;
-  height: 200px;
-  background-color: green;
+p {
+  font-size: .4em;
 }
