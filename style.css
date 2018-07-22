@@ -1,11 +1,11 @@
-div {
-  font-size: 1.875em;
+body {
+  font-size: 62.5%;
 }
 
-h1 {
-  font-size: 0.666em;
+.h1em {
+  font-size: 1.6em;
 }
 
-p {
-  font-size: .4em;
+.h2px {
+  font-size: 16px;
 }

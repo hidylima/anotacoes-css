@@ -61,10 +61,54 @@ quais propriedades são realmente necessárias
 - Transforma todas as iniciais das palavras em maiúsculas 
 
 # Unidades de medida 
+- Unidades relativas, como em e rem, permitem que os  
+elementos de um layout sejam escaláveis, pois se adaptam  
+naturalmente
 
 ## `em`
-- É útil em casos onde é necessário mudar o valor das  
-fontes de cada elemento 
+- Corresponde ao `font-size` do pai do elemento em questão 
+- Caso algum elemento pai não tenha o `font-size` definido,  
+corresponde ao valor de `font-size` do browser, que, por  
+padrão, é em média 16px
+- Favorece a usabilidade, por ser uma medida relativa 
+- Fórmula para o cálculo de um em: `target / context = result`
+  - target: valor do font-size do elemento 
+  - context: valor do font-size do pai/container
+
+### Truque de css para facilitar a conversão de px para em: 
+- É possível ajustar o font size padrão do browser, para que  
+12px passe a equivaler a 1.2em, por exemplo 
+
+```css
+body {
+  font-size: 62.5%; /* fonte alterada pra 10px */
+}
+```
+
+### `em` em margins e paddings 
+- Quando usado em margins e paddings, corresponde ao  
+font-size do próprio elemento em questão 
+- Ao ser aplicado em um padding de uma div, por exemplo,  
+o espaço interno da div será adaptado ao font-size dela 
+
+## `rem`
+- Root em
+- Corresponde ao elemento `:root` do HTML 
+- Foi criado para consertar o problema de escalabilidade dos  
+elementos com `em`'s
+
+### `rem` em margins e paddings 
+- Sempre consistente, sempre corresponde ao font-size do  
+elemento root do HTML 
+
+### Combinando margins e paddings com `em` e `rem` 
+- Em botões, por exemplo, ao ajustar o `font-size` do botão,  
+se o padding estiver com `em`, esse padding irá se ajustar  
+automaticamente ao tamanho da fonte, ou seja,  
+**as proporções são mantidas**
+- Ainda em botões, caso a `margin` esteja setada em `rem`,  
+haverá um espaço consistente em qualquer lugar em que os  
+botões forem aplicados 
 
 # Position 
 
