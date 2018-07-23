@@ -65,6 +65,9 @@ quais propriedades são realmente necessárias
 elementos de um layout sejam escaláveis, pois se adaptam  
 naturalmente
 
+## `%`
+- Corresponde ao valor do `width` do elemento pai 
+
 ## `em`
 - Corresponde ao `font-size` do pai do elemento em questão 
 - Caso algum elemento pai não tenha o `font-size` definido,  
@@ -97,9 +100,19 @@ o espaço interno da div será adaptado ao font-size dela
 - Foi criado para consertar o problema de escalabilidade dos  
 elementos com `em`'s
 
-### `rem` em margins e paddings 
+### `rem` em margins, paddings e widths 
 - Sempre consistente, sempre corresponde ao font-size do  
 elemento root do HTML 
+- [Caso o `font-size` do browser seja aumentado, o elemento  
+com o width em rem será redimensionado proporcionalmente](https://youtu.be/UHf3aQz50jQ?t=3m38s)
+
+### Combinando `em` e `rem` de forma atômica 
+- Se o `font-size` de um botão estiver em `rem` e todas as outras  
+unidades de medida deste botão estiverem em `em` (paddings,  
+border, border-radius, etc), os componentes da estrutura deste botão 
+estarão associados a ele mesmo 
+- Resumindo: `rem` em text nodes e `em` em componentes anexados  
+aos text nodes 
 
 ### Combinando margins e paddings com `em` e `rem` 
 - Em botões, por exemplo, ao ajustar o `font-size` do botão,  
@@ -122,8 +135,8 @@ desde que este tenha display block
 ## `position: absolute;`
 - Posiciona o elemento **em relação ao seu container**, caso  
 o container tenha um position definido 
-- Se o position do container não for diferente do static (padrão),  
-posiciona o elemento considerando o browser 
+- Se o position do container **não for** diferente do static  
+(padrão), posiciona o elemento considerando o browser 
 - Tira o elemento do fluxo do documento 
 
 ## `position: relative;` 
@@ -195,3 +208,18 @@ model, usada para calcular larguras e alturas dos elementos
 - Valor usado para que o padding e border de um elemento  
 sejam considerados na altura e largura de um elemento 
 - Desconsidera a propriedade `margin` 
+
+# Prefixes / prefixos 
+- Propriedades que ainda estão em testes nos navegadores  
+precisam de prefixos 
+
+Exemplos: 
+
+- `-webkit-` (Chrome, Safari, versões mais recentes do Opera.)
+- `-moz-` (Firefox)
+- `-o-` (Versões antigas do Opera)
+- `-ms-` (Internet Explorer)
+
+## [Autoprefixer](http://autoprefixer.github.io/)
+- Plugin do PostCSS que parseia o CSS e adiciona prefixos 
+- Se baseia no [Can I use](https://caniuse.com)
