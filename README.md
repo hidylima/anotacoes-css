@@ -228,6 +228,17 @@ Exemplos:
 - Propriedade que permite que um elemento seja manipulado  
 visualmente, através de inclinação, rotação, traslado ou  
 dimensionamento
+- Não faz com que outros elementos flutuem ao seu redor,  
+ou seja, os sobrepõe
+- Aceita a especificação de multiplos valores, separados  
+por um espaço 
+- O valor que se encontra à frente será realizado antes  
+do valor posterior 
+
+`transform: valor1() valor2();`
+
+## 3D transform 
+- A maioria das propriedades abaixo possuem sua versão 3d
 
 ## Scale 
 ### `transform: scale(xxTimes);` 
@@ -261,6 +272,10 @@ em relação ao número de vezes passado por parâmetro
 ### `transform: scaleY(xTimes)`
 - Faz com que o elemento tenha x vezes sua altura original 
 
+### `transform: scale3d(sx, sy, sz)` / `scaleZ(value)`
+- Afeta a escala ao longo do eixo Z, linha imaginária que  
+sai da tela em direção ao usuário 
+
 ## Skew 
 ### `transform: skewX(xxdeg)` e `transform: skewY(xxdeg)`
 - Inclina um elemento para a esquerda ou direita
@@ -282,13 +297,35 @@ com o `skewX()`
 ![skewx](https://user-images.githubusercontent.com/29297788/43177327-26fcea5c-8f9e-11e8-8fab-88ce1d2cc4ae.png)
 
 ## Translate 
-### `transform: translate(tx, ty)`
-- Move o elemento lateralmente ou para cima e para baixo 
+### `transform: translate(tx, ty)`, `transform: translateX(value)`, `transform: translateY(value)`
+- Move o elemento lateralmente ou para cima e para baixo,  
+à partir de seu canto superior esquerdo 
+- Valores são especificados em unidades de medida padrão  
+do css, negativos ou positivos 
+- Valor x positivo move o elemento para a direita 
+- Valor y positivo move o elemento para baixo 
+
+### `transform: translate3d(x, y, z)` / `translateZ(value)`
+- Move o elemento em direção ao usuário
+  - Aceita valores negativos
 
 ## Rotate 
 ### `transform: rotate()`
 - Rotaciona o elemento no sentido horário, à partir de sua  
 posição atual 
+  - Valores negativos rotacionam no sentido anti-horário
+
+### `transform: rotateX()`
+- Rotaciona o elemento em torno do eixo horizontal 
+
+### `transform: rotateY()`
+- Rotaciona o elemento em torno do eixo vertical  
+
+### `transform: rotateZ()`
+- Rotaciona o elemento em torno do eixo Z  
+
+### `transform: rotate3d(sx, sy, sz)` / `rotate3d(value)`
+- 
 
 ## Matrix 
 ### `transform: matrix()`
