@@ -223,3 +223,79 @@ Exemplos:
 ## [Autoprefixer](http://autoprefixer.github.io/)
 - Plugin do PostCSS que parseia o CSS e adiciona prefixos 
 - Se baseia no [Can I use](https://caniuse.com)
+
+# Transform 
+- Propriedade que permite que um elemento seja manipulado  
+visualmente, através de inclinação, rotação, traslado ou  
+dimensionamento
+
+## Scale 
+### `transform: scale(xxTimes);` 
+- Valor que faz com que o elemento seja redimensionado  
+em relação ao número de vezes passado por parâmetro 
+- Aplica-se às propriedades `font-size`, `padding`,  
+`height`, e `width`
+- É um atalho para `scaleX()` e `scaleY()`
+
+```css
+.my-div:hover {
+  transform: scale(2); 
+  /* no hover, faz com que o elemento tenha 2x suas dimensões originais */
+}
+```
+
+### `transform: scale(x, y);`
+- Parâmetro `x` estica o elemento horizontalmente 
+- Parâmetro `y` estica o elemento verticalmente 
+
+```css
+.my-div:hover {
+  transform: scale(4, .5);
+  /* no hover, o elemento terá 4x sua largura e metade de sua altura */
+}
+```
+
+### `transform: scaleX(xTimes)`
+- Faz com que o elemento tenha x vezes sua largura original 
+
+### `transform: scaleY(xTimes)`
+- Faz com que o elemento tenha x vezes sua altura original 
+
+## Skew 
+### `transform: skewX(xxdeg)` e `transform: skewY(xxdeg)`
+- Inclina um elemento para a esquerda ou direita
+- Ambas funções precisam ser usadas, pois não há atalho  
+para este valor
+- Pode, por exemplo, inclinar um quadrado para a esquerda,  
+com o `skewX()`
+
+```css
+.my-div {
+  width: 50px;
+  height: 50px;
+  background-color: red;
+  margin: 50px auto 0;
+  transform: skewX(-45deg);
+}
+```
+
+![skewx](https://user-images.githubusercontent.com/29297788/43177327-26fcea5c-8f9e-11e8-8fab-88ce1d2cc4ae.png)
+
+## Translate 
+### `transform: translate(tx, ty)`
+- Move o elemento lateralmente ou para cima e para baixo 
+
+## Rotate 
+### `transform: rotate()`
+- Rotaciona o elemento no sentido horário, à partir de sua  
+posição atual 
+
+## Matrix 
+### `transform: matrix()`
+- Combina todas as transformações em uma 
+
+## Perspective
+### `transform: perspective()`
+- Não afeta o próprio elemento, mas afeta os elementos com  
+transforms com valores 3D, permitindo que todos eles tenham  
+uma constante profundade de perspectiva 
