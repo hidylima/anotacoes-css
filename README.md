@@ -237,6 +237,24 @@ do valor posterior
 
 `transform: valor1() valor2();`
 
+## `transform-origin: value;`
+- É uma propriedade usada em conjunto com o transform 
+- Permite a mudança do ponto de origem de um transform 
+- O default da origem de um transform é "50% 50%", ou seja,  
+exatamente no centro do elemento
+- Pode receber 2 valores separados por espaço, em caso  
+de transformações 2d 
+  - Em transformações 3d, recebe 3 valores 
+- Os valores podem ser `top`, `left`, `right`, `bottom`  
+e `center`
+  - O primeiro valor é a posição horizontal
+  - O segundo, a vertical
+  - O terceiro, o eixo Z
+    - Só funciona caso o elemento possua transforms 3d
+    - Não pode ser uma porcentagem 
+
+`transform-origin: bottom right;`
+
 ## 3D transform 
 - A maioria das propriedades abaixo possuem sua versão 3d
 
@@ -324,8 +342,10 @@ posição atual
 ### `transform: rotateZ()`
 - Rotaciona o elemento em torno do eixo Z  
 
-### `transform: rotate3d(sx, sy, sz)` / `rotate3d(value)`
-- 
+### `transform: perspective(value)`
+- Não afeta o elemento em si, mas as propriedades `transform`  
+3d dos elementos descendentes, permitindo que elas tenham uma  
+profundidade consistente de perspectiva 
 
 ## Matrix 
 ### `transform: matrix()`
@@ -336,3 +356,65 @@ posição atual
 - Não afeta o próprio elemento, mas afeta os elementos com  
 transforms com valores 3D, permitindo que todos eles tenham  
 uma constante profundade de perspectiva 
+
+# `box-shadow`
+- Funde sombras em elementos do tipo block 
+- Recebe 5 valores, separados por espaço 
+  1. Horizontal offset
+    - Positivo significa que a sombra estará à direita do  
+    elemento 
+    - Negativo, leva a sombra para o lado esquerdo 
+  2. Vertical offset
+    - Negativo traz a sombra para cima do elemento 
+    - Positivo, para baixo 
+  3. Blur radius 
+    - Opcional
+    - 0 faz com que a sombra seja não tenha desfoque 
+    - Quanto maior o valor, mais desfocada será a sombra 
+  4. Spread radius 
+    - Opcional
+    - Valores positivos aumentam o tamanho da sombra 
+    - Negativos, diminuem 
+    - 0 é o valor default, a sombra é do mesmo tamanho  
+    do desfoque
+  5. Color 
+
+```css
+div{
+  box-shadow: 0 15px 20px -10px #b1b1b1;
+}
+```
+
+![box-shadow](https://user-images.githubusercontent.com/29297788/43301406-3bee70d6-913b-11e8-8d3a-3c8398100606.jpg)
+
+- Inner shadow 
+
+```css
+div {
+  box-shadow: inset 0 0 10px black;
+}
+```
+
+![inner-shadow](https://user-images.githubusercontent.com/29297788/43301509-0a63ca7e-913c-11e8-8992-f72e19fdf81c.jpg)
+
+# `rgba()`
+- Valor que recebe 4 parâmetros separados por vírgula 
+- O 4º parâmetro indica o quanto a cor do elemento  
+terá de opacidade 
+
+```css
+div {
+  background-color: rgba(255, 0, 0, .1); // 10% de opacidade 
+}
+```
+
+![rgba](https://user-images.githubusercontent.com/29297788/43301759-74cec502-913d-11e8-85ba-3f7e05add444.jpg)
+
+- Ao contrário da propriedade `opacity`, o rgba não  
+afeta os elementos filhos 
+
+![opacity-rgba](https://user-images.githubusercontent.com/29297788/43302032-b0785ffe-913e-11e8-8cd9-9f76ba65e866.jpg)
+
+# `background`
+- Propriedade que permite manipular o background de  
+qualquer elemento 

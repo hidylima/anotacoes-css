@@ -5,9 +5,10 @@
 }
 
 .my-div {
-  width: 50px;
-  height: 50px;
-  background-color: red;
+  width: 200px;
+  height: 200px;
+  /* background-color: #ff0000; */
+  background-color: rgba(255, 0, 0, .3);
+  /* opacity: .3; */
   margin: 50px auto 0;
-  transform: translate(0, 90px);
 }
