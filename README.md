@@ -404,7 +404,7 @@ terá de opacidade
 
 ```css
 div {
-  background-color: rgba(255, 0, 0, .1); // 10% de opacidade 
+  background-color: rgba(255, 0, 0, .1); /* 10% de opacidade */
 }
 ```
 
@@ -418,3 +418,54 @@ afeta os elementos filhos
 # `background`
 - Propriedade que permite manipular o background de  
 qualquer elemento 
+- É uma propriedade de atalho, ou seja, permite que várias  
+propriedades sejam escritas dentro dela 
+- É composta de 8 propriedades separadas por espaço: 
+  - background-image
+  - background-position
+  - background-size
+  - background-repeat
+  - background-attachment
+  - background-origin
+  - background-clip
+  - background-color
+- As propriedades podem ser combinadas na quantidade necessária,  
+contudo, a ordem de declaração é a referência acima 
+- Tudo o que não é especificado na propriedade `background`  
+é setado como default 
+  - Se há uma instrução `background-color: red` em uma linha e,  
+  abaixo dela, uma instrução `background: url(./texture.jpg)`, o  
+  background do elemento será transparente 
+
+```css
+.my-div {
+  background: 
+    url(./img/my-img.jpg)    /* image */
+    top center / 200px 200px /* position / size */
+    no-repeat                /* repeat */
+    fixed                    /* attachment */
+    padding-box              /* origin */
+    content-box              /* clip */
+    red;                     /* color */
+}
+```
+
+## Múltiplos backgrounds
+- Empilha os backgrounds do elemento 
+  - Possibilita uma camade de png acima de um gradiente,  
+  por exemplo
+- As propriedades relacionadas aos backgrounds são  
+separadas por vírgula 
+  - Cada valor na lista separada por vírgula corresponde  
+  às respectivas camadas de background 
+
+```css
+.my-div {
+  background: 
+    url(./img/my-logo.png), 
+    url(./img/my-second-png.png), 
+    linear-gradient(ro right, rgba(30, 75, 115, 1), rgba(255, 255, 255, 0));
+  background-repeat: no-repeat, no-repeat, no-repeat;
+  background-position: bottom right, left; /* posicionou apenas as 2 camadas de imagens */
+}
+```
