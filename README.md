@@ -458,6 +458,7 @@ contudo, a ordem de declaração é a referência acima
 separadas por vírgula 
   - Cada valor na lista separada por vírgula corresponde  
   às respectivas camadas de background 
+- Vale para múltiplos gradientes, separados por vírgula 
 
 ```css
 .my-div {
@@ -469,3 +470,88 @@ separadas por vírgula
   background-position: bottom right, left; /* posicionou apenas as 2 camadas de imagens */
 }
 ```
+
+## `background-image(url, url)`
+- Propriedade que aplica um gráfico (PNG, SVG, JPG, GIF, WEBP)  
+ou gradiente ao background de um elemento 
+  - Aplica-se a todos os elementos 
+- Uso de imagens: `background-image: url(./image-path-here.extension);`
+- Pode ser usada para fazer sprites de imagens 
+  - Método que pode reduzir o número de requisições HTTP
+- Especificar um background-color para ser usado se uma imagem não  
+estiver disponível. Imagens de fundo são renderizadas sobre a cor  
+de fundo
+- Aceita múltiplas imagens e/ou degradês por parâmetro, separados  
+por vírgula 
+
+# `linear-gradient(color, color)`
+- Aceita duas ou mais cores por parâmetro, separadas por vírgula 
+- Valores aceitos
+  - `XXdeg` como primeiro parâmetro 
+    - Inclina xx graus 
+    - Sentido horário 
+    - `to top` ou `0deg`
+    - `to bottom` ou `180deg`
+    - `to left` ou `270deg`
+    - `to right` ou `90deg`
+  - `<color-stop>`
+    - O gradiente começa em XX% da linha do gradiente 
+- Suportam transparências `rgba()`
+
+```css
+.my-div {
+  background: linear-gradient(blue, #222);
+}
+```
+![linear-gradient](https://user-images.githubusercontent.com/29297788/43361373-5a6fff02-92a3-11e8-82d2-58615e76abe2.png)
+
+```css
+.my-div {
+  background: linear-gradient(45deg, red, blue);
+}
+```
+![linear-gradient-with-deg](https://user-images.githubusercontent.com/29297788/43361407-5f7c5c1a-92a4-11e8-94b8-b3c33668bd08.png)
+
+```css
+.my-div {
+  background: linear-gradient(135deg, orange, orange 60%, cyan);
+}
+```
+![l-g-color-stop](https://user-images.githubusercontent.com/29297788/43361484-bca9d542-92a5-11e8-9f39-b4b25e82c2e7.png)
+
+```css
+.my-div {
+  background: linear-gradient(to right, rgba(255,255,255,0), rgba(255,255,255,1)), url(http://foo.com/image.jpg);
+}
+```
+![gradientes](https://user-images.githubusercontent.com/29297788/43361505-6276d5ce-92a6-11e8-90a9-0905d537c528.png)
+
+# `radial-gradient(color, color)`
+- Inicia em um único ponto e emana para fora 
+- Comumente usados para simular iluminação 
+  - Faz com que o gradiente pareça mais natural 
+- O valor default faz com que a cor do primeiro parâmetro  
+se inicie no centro e se desvaneça para a cor final em  
+direção às bordas do elemento 
+  - O desvanecimento acontece em um ritmo igual, não  
+  importa em qual direção
+- `circle closest-side` 
+  - Ao contrário do parâmetro default (`ellipse`), faz  
+  com que o desvanecimento termine como um espaço  
+  separando o valor da forma 
+- `circle at top right`
+  - 
+
+```css
+.my-div {
+  background: radial-gradient(white, black);
+}
+```
+![radiel-01](https://user-images.githubusercontent.com/29297788/43361558-ec102d0c-92a7-11e8-895b-6a2ea58f64f3.png)
+
+```css
+.my-div {
+  background: radial-gradient(circle closest-side, white, black);
+}
+```
+![radiel-02](https://user-images.githubusercontent.com/29297788/43361592-e7f3d4c0-92a8-11e8-87ea-98495b9024df.png)

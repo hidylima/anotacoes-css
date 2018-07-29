@@ -5,10 +5,7 @@
 }
 
 .my-div {
-  background: 
-    url(./img/my-logo.png), 
-    url(./img/my-second-png.png), 
-    linear-gradient(ro right, rgba(30, 75, 115, 1), rgba(255, 255, 255, 0));
-  background-repeat: no-repeat, no-repeat, no-repeat;
-  background-position: bottom right, left; /* posicionou apenas as 2 camadas de imagens */
+  width: 200px;
+  height: 200px;
+  background: radial-gradient(circle closest-side, white, black);
 }
