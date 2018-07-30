@@ -562,3 +562,13 @@ direção às bordas do elemento
 }
 ```
 ![gr1](https://user-images.githubusercontent.com/29297788/43376355-b1696102-9390-11e8-909d-25d823b036b4.png)
+
+# Gradientes cônicos 
+![cg](https://user-images.githubusercontent.com/29297788/43376390-ee89575e-9390-11e8-9d1d-6fb793d1d600.png)
+- Similar aos gradientes radiais, é circular e usa o centro do  
+elemento como ponto de origem para as paradas de cores 
+- Contudo, enquanto a parada de cor de um gradiente radial emerge  
+do centro do círculo, o gradiente cônico insere as cores **ao redor**  
+do círculo 
+- Têm esse nome devido tendem a parecer a forma de um cone visto  
+por cima 
