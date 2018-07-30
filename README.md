@@ -540,7 +540,7 @@ direção às bordas do elemento
   com que o desvanecimento termine como um espaço  
   separando o valor da forma 
 - `circle at top right`
-  - 
+  - Posiciona o círculo no background 
 
 ```css
 .my-div {
@@ -555,3 +555,10 @@ direção às bordas do elemento
 }
 ```
 ![radiel-02](https://user-images.githubusercontent.com/29297788/43361592-e7f3d4c0-92a8-11e8-87ea-98495b9024df.png)
+
+```css
+.my-div {
+  background: radial-gradient(circle at bottom right, white, black);
+}
+```
+![gr1](https://user-images.githubusercontent.com/29297788/43376355-b1696102-9390-11e8-909d-25d823b036b4.png)
