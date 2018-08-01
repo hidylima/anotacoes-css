@@ -1,18 +1,14 @@
 # Especificidade 
 - O id é mais específico que uma classe que, por sua vez,  
 é mais específica que um elemento 
-
-## Estilo inline 
-- Precedência máxima 
-
-## Id
-- Maior precedência após o estilo inline 
-
-## Classe, pseudo classe, atributo 
-- Maior precedência após o id 
-
-## Elemento, pseudo elemento 
-- Maior precedência após Classe, pseudo classe ou atributo 
+  - Estilo inline 
+    - Precedência máxima 
+  - Id
+    - Maior precedência após o estilo inline 
+  - Classe, pseudo classe, atributo 
+    - Maior precedência após o id 
+  - Elemento, pseudo elemento 
+    - Maior precedência após Classe, pseudo classe ou atributo 
 
 # Herança 
 - Elementos herdam estilos de seus containers 
@@ -430,7 +426,7 @@ propriedades sejam escritas dentro dela
   - background-clip
   - background-color
 - As propriedades podem ser combinadas na quantidade necessária,  
-contudo, a ordem de declaração é a referência acima 
+contudo, **a ordem de declaração é a referência acima**
 - Tudo o que não é especificado na propriedade `background`  
 é setado como default 
   - Se há uma instrução `background-color: red` em uma linha e,  
@@ -450,9 +446,9 @@ contudo, a ordem de declaração é a referência acima
 }
 ```
 
-## Múltiplos backgrounds
+# Múltiplos backgrounds
 - Empilha os backgrounds do elemento 
-  - Possibilita uma camade de png acima de um gradiente,  
+  - Possibilita uma camada de png acima de um gradiente,  
   por exemplo
 - As propriedades relacionadas aos backgrounds são  
 separadas por vírgula 
@@ -471,7 +467,7 @@ separadas por vírgula
 }
 ```
 
-## `background-image(url, url)`
+# `background-image(url, url)`
 - Propriedade que aplica um gráfico (PNG, SVG, JPG, GIF, WEBP)  
 ou gradiente ao background de um elemento 
   - Aplica-se a todos os elementos 
@@ -483,6 +479,32 @@ estiver disponível. Imagens de fundo são renderizadas sobre a cor
 de fundo
 - Aceita múltiplas imagens e/ou degradês por parâmetro, separados  
 por vírgula 
+  - Comumente necessita de mais valores para que os backgrounds  
+  se posicionem corretamente 
+- `background-color` como fallback
+  - Se um `background-image` ou gradiente não for carregado, 
+  o browser irá procurar um background-color como fallback
+    - Neste caso, o recomendado é especificar a imagem primeiro  
+    e depois a cor de fallback
+
+`background-color` como fallback:
+
+```css
+background: url(sweettexture.jpg) blue;
+```
+
+múltiplas imagens:
+
+```css
+body {
+  background:
+    url(logo.png) bottom center no-repeat,
+    url(background-pattern.png) repeat;
+}
+```
+
+# `background-position`
+- 
 
 # `linear-gradient(color, color)`
 - Aceita duas ou mais cores por parâmetro, separadas por vírgula 
@@ -570,5 +592,39 @@ elemento como ponto de origem para as paradas de cores
 - Contudo, enquanto a parada de cor de um gradiente radial emerge  
 do centro do círculo, o gradiente cônico insere as cores **ao redor**  
 do círculo 
-- Têm esse nome devido tendem a parecer a forma de um cone visto  
-por cima 
+- Têm esse nome devido a parecer a forma de um cone visto por cima 
+- [Ainda não suportado pelos browsers](https://caniuse.com/#feat=css-conic-gradients)
+
+```css
+.my-div {
+  background: conic-gradient(#fff, #000);
+}
+```
+
+# `repeating-linear-gradient()`
+- O tamanho do gradiente é determinado pelo fim da cor final 
+  - Se for 20px, o tamanho do gradiente, que se repete, será  
+  20px x 20px quadrados 
+
+```css
+.my-div {
+  background: repeating-linear-gradient(45deg, blue, yellow 10px, red 10px, red 20px);
+}
+```
+
+![grad](https://user-images.githubusercontent.com/29297788/43497469-bb5b0a10-9518-11e8-9d89-e52a980201cf.png)
+
+# `repeating-radial-gradient()`
+- Segue a mesma lógica de repetição do gradiente linear 
+
+```css
+.my-div {
+  background: repeating-radial-gradient(
+    circle at 0 0, 
+    #ccc, 
+    white 50px
+  );
+}
+```
+
+![rg](https://user-images.githubusercontent.com/29297788/43497673-ba5821c4-9519-11e8-895e-bbe3cafb8879.png)
