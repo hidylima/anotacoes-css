@@ -503,9 +503,6 @@ body {
 }
 ```
 
-# `background-position`
-- 
-
 # `linear-gradient(color, color)`
 - Aceita duas ou mais cores por parâmetro, separadas por vírgula 
 - Valores aceitos
@@ -628,3 +625,41 @@ do círculo
 ```
 
 ![rg](https://user-images.githubusercontent.com/29297788/43497673-ba5821c4-9519-11e8-895e-bbe3cafb8879.png)
+
+# `background-position: x y;`
+- Seta a posição inicial de uma imagem ou gradiente, relativa  
+ao `background-origin`
+- Valores default posicionam a imagem no topo esquerdo do container 
+- Possíveis valores: 
+  - Palavras-chave `top` (0% y), `bottom` (100% y), `left` (0% x),  
+  `right` (100% x), `center` (50% x e y)
+  - Porcentagem `25%` `75%`
+    - `50%` significa o alinhamento do meio da imagem com o meio  
+    do container
+    - `100%` significa o alinhamento do último pixel da imagem  
+    com o último pixel do container
+  - Múltiplas imagens `0` `0`, `center`
+  - Considerando a borda `bottom 10px right 20px`
+- Caso apenas um valor seja declarado, ele será o valor x e o  
+browser irá setar o valor y como center
+- Aceita até quatro valores, incluindo qualquer uma das  
+palavras-chave, exceto `center`
+  - `background-position: right 45px bottom;`
+    - O background será posicionado à 45px da borda direita e  
+    0px à parte inferior do container 
+  - `background-position: right 10px bottom 20px;`
+    - Posiciona o background à 10px à direita da borda e à 20px  
+    da parte inferior do container 
+  - Neste formato, a palavra-chave sempre deve preceder a  
+  unidade de medida 
+
+```css
+.container {
+  width: 700px;
+  height: 700px;
+  background: url(./img/pug.png) no-repeat #ffda8f ;
+  background-position: 100% 100%;
+}
+```
+
+![background-position](https://user-images.githubusercontent.com/29297788/43561348-0888febc-95ed-11e8-8d99-52702b80c0fb.png)

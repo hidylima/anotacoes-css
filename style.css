@@ -4,9 +4,9 @@
   padding: 0;
 }
 
-p {
-  font-size: 30px;
-  background: linear-gradient(red, blue);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
+.container {
+  width: 700px;
+  height: 700px;
+  background: url(./img/pug.png) no-repeat #ffda8f ;
+  background-position: right 20px top 50%;
 }
