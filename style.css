@@ -7,6 +7,9 @@
 .container {
   width: 700px;
   height: 700px;
-  background: url(./img/pug.png) no-repeat #ffda8f ;
-  background-position: right 20px top 50%;
+  border: 1px solid #666;
+  background: 
+    url(img/pug.png) top / contain no-repeat,
+    url(img/t11.png) bottom / contain no-repeat
+  ;
 }

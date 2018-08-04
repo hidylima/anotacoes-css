@@ -663,3 +663,92 @@ palavras-chave, exceto `center`
 ```
 
 ![background-position](https://user-images.githubusercontent.com/29297788/43561348-0888febc-95ed-11e8-8d99-52702b80c0fb.png)
+
+# `background-size`
+- Propriedade que possui muitas variações e diferentes  
+sintaxes, todas com diferentes casos de uso 
+- Ao ser usada com o shothand `background`, vir após a  
+propriedade `background-position`, que deve ser especificada
+- Há 4 diferentes sintaxes possíveis para esta propriedade: 
+  - keywords sintax 
+    - Além do valor padrão, (auto), há 2 keywords possíveis 
+      - `auto` calcula, automaticamente, a medida baseada no  
+      tamanho atual da imagem e proporção 
+        - Mantém a proporção da imagem inalterada (exemplo 3)
+    - ![cover-and-contain](https://user-images.githubusercontent.com/29297788/43672257-94c5fa12-9780-11e8-864c-56429650d9fd.jpg)
+    - `cover`
+      - Diz ao browser que a imagem **sempre** irá cobrir todo  
+      o container, mesmo que a imagem tenha que ser esticada  
+      (proporcionalmente) ou ultrapasse os limites do container  
+      (exemplo 1)
+    - `contain`
+      - **Sempre** mostra toda a imagem, proporcionalmente, mesmo  
+      que deixe espaço em um dos lados ou em baixo (exemplo 2)
+  - one-value sintax 
+    - Configura a largura. A altura permanece `auto`
+    - Qualquer unidade de medida CSS pode ser utilizada (exemplo 4)
+  - two-values sintax (exemplo 5)
+    - Valor 1: seta a largura da imagem
+    - Valor 2: seta a altura da imagem
+    - Qualquer unidade de medida pode ser utilizada
+    - Pode distorcer a imagem 
+  - multiple background sintax (exemplo 6)
+    - Permite combinar qualquer um dos valores acima  
+    e aplicá-los à multiplas imagens, apenas adicionando  
+    vírgula entre cada sintaxe 
+
+```css
+.container {
+  /* ... */
+  background: url(img/t11.png) top / cover no-repeat;
+}
+```
+
+![cover](https://user-images.githubusercontent.com/29297788/43672400-72635caa-9783-11e8-9cc7-ad15b2664486.png)
+
+```css
+.container {
+  /* ... */
+  background: url(img/t11.png) top / contain no-repeat;
+}
+```
+
+![contain](https://user-images.githubusercontent.com/29297788/43672410-a75b3e28-9783-11e8-885c-46eb0cf02156.png)
+
+```css
+.container {
+  /* ... */
+  background: url(img/t11.png) top / auto no-repeat;
+}
+```
+
+![auto](https://user-images.githubusercontent.com/29297788/43672442-52dd1dde-9784-11e8-9ca9-44e99371a6f6.png)
+
+```css
+.container {
+  /* ... */
+  background: url(img/t11.png) top left / 95% no-repeat;
+}
+```
+
+![one-value-syntax](https://user-images.githubusercontent.com/29297788/43672463-c45da640-9784-11e8-8820-fd793390c4a6.png)
+
+```css
+.container {
+  /* ... */
+  background: url(img/t11.png) top / 95% 75% no-repeat; /* position / size */
+}
+```
+
+![bg-size-two-values](https://user-images.githubusercontent.com/29297788/43672494-66aa9214-9785-11e8-8410-0a25014f5237.png)
+
+```css
+.container {
+  background: 
+    url(img/pug.png) top / contain no-repeat, /* position / size */
+    url(img/t11.png) bottom / contain no-repeat /* position / size */
+  ;
+}
+```
+
+![multiple](https://user-images.githubusercontent.com/29297788/43672588-a12e6878-9787-11e8-8a08-b41864a25cdf.png)
