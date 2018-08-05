@@ -750,5 +750,79 @@ propriedade `background-position`, que deve ser especificada
   ;
 }
 ```
-
 ![multiple](https://user-images.githubusercontent.com/29297788/43672588-a12e6878-9787-11e8-8a08-b41864a25cdf.png)
+
+# `background-repeat`
+- Se uma propriedade `background-image` é especificada,  
+`background-repeat` define se e como essa imagem será  
+repetida (exemplo 1)
+- Possíveis valores: 
+  - `repeat`: ladrilha a imagem em ambas as direções,  
+  x e y. É o valor default
+  - `repeat-x`: repete a imagem horizontalmente
+  - `repeat-y`: repete a imagem verticalmente
+  - `no-repeat`: mostra a imagem apenas uma vez 
+  - `space`: ladrilha a imagem em ambas as direções (x, y). 
+  Nunca corta a imagem, a menos que uma única imagem seja  
+  muito grande para encaixar. Se múltiplas imagens podem  
+  ser encaixadas, elas serão espaçadas de forma com que  
+  toquem as bordas (exemplo 2)
+  - `round`: ladrilha a imagem em ambas as direções, nunca  
+  corta a imagem, a menos que uma única imagem seja muito  
+  grande para encaixar. Se múltiplas imagens podem ser  
+  encaixadas e há espaço sobrando, esmaga ou estica as  
+  imagens para que elas se encaixem no espaço (exemplo 3)
+- Possibilita a passagem de 2 valores:  
+`background-repeat: round space` (exemplo 4)
+
+exemplo 1:
+
+```css
+.container {
+  background: url(./img/pug.png);
+  background-repeat: repeat-x;
+}
+```
+
+![repeat-x](https://user-images.githubusercontent.com/29297788/43689089-5494df2a-98cb-11e8-9976-1b98a6e20034.png)
+
+exemplo 2:
+
+```css
+.container {
+  width: 1500px;
+  height: 800px;
+  background: url(./img/pug.png);
+  background-repeat: space;
+  background-color: red;
+}
+```
+
+![space](https://user-images.githubusercontent.com/29297788/43689076-01a198bc-98cb-11e8-98cf-9403767918b2.png)
+
+exemplo 3:
+
+```css
+.container {
+  /* ... */
+  background: url(./img/pug.png);
+  background-repeat: round;
+  background-color: red;
+}
+```
+
+![round](https://user-images.githubusercontent.com/29297788/43689138-12538e6c-98cc-11e8-983e-87993902319f.png)
+
+exemplo 4: 
+
+![2values](https://user-images.githubusercontent.com/29297788/43689172-8b1567da-98cc-11e8-9e8f-992cb2265ddf.png)
+
+# `background-atachment`
+- Especifica como mover o background em relação ao viewport 
+- Valores possíveis: 
+  - `scroll`: valor default. O background acompanha o scroll.  
+    - O background é fixo em relação ao próprio elemento, e  
+    não rola com os conteúdos do background. É efetivamente  
+    anexado à borda do elemento 
+  - `fixed`: 
+  - `local`: 
