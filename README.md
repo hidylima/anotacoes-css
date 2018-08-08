@@ -824,5 +824,68 @@ exemplo 4:
     - O background é fixo em relação ao próprio elemento, e  
     não rola com os conteúdos do background. É efetivamente  
     anexado à borda do elemento 
-  - `fixed`: 
-  - `local`: 
+  - `fixed`: faz com que o background não role ao scrollar  
+  a página
+
+# `background-origin`
+- Define onde o background será exibido: em todo o elemento,  
+dentro da borda ou dentro do padding
+- Valores possíveis: 
+  - `border-box` - exemplo 1: o background é posicionado  
+  relativo ao border-box
+  - `content-box` - exemplo 2: o background é posicionado  
+  relativo ao content-box
+  - `padding-box` - exemplo 3: o background é posicionado  
+  relativo ao padding-box
+  - `inherit`
+- Similar ao `background-clip`, mas redimensiona o background  
+ao invés de cortá-lo 
+- É ignorado caso o `background-attachment` possua o valor `fixed`
+
+exemplo 1: 
+
+```css
+.container {
+  height: 500px;
+  width: 500px;
+  border: 20px solid rgba(0,0,0, .3);
+  background: url(./img/pug.png);
+  background-repeat: no-repeat;
+  background-origin: border-box;
+}
+```
+
+![bb](https://user-images.githubusercontent.com/29297788/43809073-7a62be18-9a86-11e8-9c93-226e03d9ee2c.jpg)
+
+exemplo 2: 
+
+```css
+.container {
+  height: 500px;
+  width: 500px;
+  border: 20px solid rgba(0,0,0, .3);
+  background: url(./img/pug.png);
+  background-repeat: no-repeat;
+  background-origin: content-box;
+  background-color: red;
+}
+```
+
+![cb](https://user-images.githubusercontent.com/29297788/43809143-e4d074f2-9a86-11e8-9a9b-ddd5f5d4b561.jpg)
+
+exemplo 3: 
+
+```css
+.container {
+  height: 500px;
+  width: 500px;
+  border: 30px solid rgba(0,0,0, .3);
+  padding: 40px;
+  background: url(./img/pug.png);
+  background-repeat: no-repeat;
+  background-origin: padding-box;
+  background-color: red;
+}
+```
+
+![pb](https://user-images.githubusercontent.com/29297788/43809256-a25fad80-9a87-11e8-9878-4e10aa0a2777.jpg)

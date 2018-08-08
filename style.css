@@ -4,15 +4,13 @@
   padding: 0;
 }
 
-p {
-  width: 50%;
-  margin: 0 auto;
-  padding: 20px 0;
-  color: #fff;
-}
-
 .container {
-  height: 2333px;
-  background: url(./img/ferhat-deniz-fors-766977-unsplash.jpg);
+  height: 500px;
+  width: 500px;
+  border: 30px solid rgba(0,0,0, .3);
+  padding: 40px;
+  background: url(./img/pug.png);
   background-color: red;
+  background-repeat: no-repeat;
+  background-origin: padding-box;
 }
