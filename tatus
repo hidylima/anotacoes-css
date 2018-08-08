@@ -1,0 +1,115 @@
+[33mcommit f3312489a685a1e884a5252fbc8bec3d6b17d6e5[m[33m ([m[1;36mHEAD -> [m[1;32mmaster[m[33m, [m[1;31morigin/master[m[33m, [m[1;31morigin/HEAD[m[33m)[m
+Author: Roger Melo <rogerw592@gmail.com>
+Date:   Tue Aug 7 21:24:03 2018 -0300
+
+    background-origin add
+
+[33mcommit 6fbd97482d3792306519b47cb6f4a3d7fbad1bf5[m
+Author: Roger Melo <rogerw592@gmail.com>
+Date:   Sun Aug 5 17:01:03 2018 -0300
+
+    background-attachment
+    - Valores especificados
+    - Vídeo https://youtu.be/odAcIXtDAtY até 8:00
+
+[33mcommit e365f861c472267a30e39edd99e42addb7bf9ddd[m
+Author: Roger Melo <rogerw592@gmail.com>
+Date:   Sat Aug 4 02:25:41 2018 -0300
+
+    add background-size info
+
+[33mcommit cef830d98e5094e2d94ea0936139009216dc8fdd[m
+Author: Roger Melo <rogerw592@gmail.com>
+Date:   Thu Aug 2 00:59:03 2018 -0300
+
+    add background-position property info
+
+[33mcommit fdb6820d2175d2ebc605db20bac1e6b6cf9f588c[m
+Author: Roger Melo <rogerw592@gmail.com>
+Date:   Wed Aug 1 00:01:09 2018 -0300
+
+    add background-image information
+
+[33mcommit e483a910d801f2e6c4221ec2d7d0c228a1c0e132[m
+Author: Roger Melo <rogerw592@gmail.com>
+Date:   Mon Jul 30 04:46:48 2018 -0300
+
+    add conic gradientes info
+
+[33mcommit 0b4aabaf25e7e6be2928314f992929f7fbca909b[m
+Author: Roger Melo <rogerw592@gmail.com>
+Date:   Mon Jul 30 00:40:38 2018 -0300
+
+    added details about radial gradients
+
+[33mcommit 042ca590731ad43161b8c44f661fd983d63db11d[m
+Author: Roger Melo <rogerw592@gmail.com>
+Date:   Sat Jul 28 21:01:57 2018 -0300
+
+    update README.md with image-background info
+
+[33mcommit 7e23c0805214e911d4b7c5ddff25a6c6afdabba9[m
+Author: Roger Melo <rogerw592@gmail.com>
+Date:   Fri Jul 27 21:13:25 2018 -0300
+
+    added background property info
+
+[33mcommit 527c80948b8a12b9496e4776259b288faa415aa0[m
+Author: Roger Melo <rogerw592@gmail.com>
+Date:   Fri Jul 27 01:51:25 2018 -0300
+
+    add background info
+
+[33mcommit d18475ae245654071c205ff5386ae43e1a26f789[m
+Author: Roger Melo <rogerw592@gmail.com>
+Date:   Wed Jul 25 13:30:17 2018 -0300
+
+    add transform 3d info
+
+[33mcommit 9c751894b65fe677f930a4824f1db0b97d689d6a[m
+Author: Roger Melo <rogerw592@gmail.com>
+Date:   Wed Jul 25 00:04:03 2018 -0300
+
+    add transform property info
+
+[33mcommit 7336a14cbb90963a79a4fb4f64e29b98463cad1d[m
+Author: Roger Melo <rogerw592@gmail.com>
+Date:   Mon Jul 23 19:16:16 2018 -0300
+
+    add autoprefixer info
+
+[33mcommit cb764198e2383fff5c107c38522a2978eac4d203[m
+Author: Roger Melo <rogerw592@gmail.com>
+Date:   Sun Jul 22 19:31:40 2018 -0300
+
+    em e rem inclusos
+
+[33mcommit a936f85d7a69d85ff716796256f614c39b496859[m
+Author: Roger Melo <rogerw592@gmail.com>
+Date:   Sat Jul 21 18:16:37 2018 -0300
+
+    começando a escrever sobre em baseado no artigo do tableless
+
+[33mcommit cf88c1889c0c05304d32f94e9570f26a056f3c61[m
+Author: Roger Melo <rogerw592@gmail.com>
+Date:   Fri Jul 20 12:16:35 2018 -0300
+
+    update READMME.md with new content
+
+[33mcommit ab1c2a0f8f958ddebb52d923e830ade837f55e61[m
+Author: Roger Melo <rogerw592@gmail.com>
+Date:   Wed Jul 18 21:15:33 2018 -0300
+
+    update box model on README.md
+
+[33mcommit 2321646525649d4f29640e62df153869c2d3eab2[m
+Author: Roger Melo <rogerw592@gmail.com>
+Date:   Fri Jul 13 18:36:59 2018 -0300
+
+    position property
+
+[33mcommit a81bf1ff9e3d93723e260d2ae891cc9e476e3675[m
+Author: Roger Melo <rogerw592@gmail.com>
+Date:   Thu Jul 12 21:51:06 2018 -0300
+
+    Initial commit

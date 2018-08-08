@@ -119,6 +119,10 @@ automaticamente ao tamanho da fonte, ou seja,
 haverá um espaço consistente em qualquer lugar em que os  
 botões forem aplicados 
 
+# `width`
+- Especifica a largura do elemento 
+- A largura default é o content-area
+
 # Position 
 
 ## `position: static;`
