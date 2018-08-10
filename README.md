@@ -121,6 +121,7 @@ botões forem aplicados
 
 # `width`
 - Especifica a largura do elemento 
+- Não se aplica a elementos inline 
 - As propriedades `min-width` e `max-width` sobrescrevem a  
 propriedade `width` 
 - Medidas de valores: 
@@ -134,6 +135,18 @@ propriedade `width`
   sua largura para permitir que seu conteúdo seja exibido  
   corretamente
   - `%` - O valor do elemento é relativo à largura de seu container 
+
+# `min-width`
+- Define a largura mínima do elemento 
+- Sempre sobrescreve a propriedade `width`, independentemente se  
+for declarada antes ou depois 
+- Default: `min-width: 0;`
+- Se a largura mínima for **maior** que a largura do elemento,  
+`min-width` será aplicada 
+  - Se a viewport for menor que a largura mínima, uma barra de  
+  rolagem será gerada
+- Se a largura mínima for **menor** que a largura do elemento,  
+`min-width` não terá efeito 
 
 # Position 
 
