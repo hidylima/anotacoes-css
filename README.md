@@ -121,7 +121,19 @@ botões forem aplicados
 
 # `width`
 - Especifica a largura do elemento 
-- A largura default é o content-area
+- As propriedades `min-width` e `max-width` sobrescrevem a  
+propriedade `width` 
+- Medidas de valores: 
+  - `px`
+  - `em`
+  - `rem`
+  - `%`
+  - `%`
+- Valores: 
+  - `auto` - Valor default. O elemento ajustará, automaticamente,  
+  sua largura para permitir que seu conteúdo seja exibido  
+  corretamente
+  - `%` - O valor do elemento é relativo à largura de seu container 
 
 # Position 
 
