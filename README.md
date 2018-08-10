@@ -966,3 +966,16 @@ exemplo 4:
 ```
 
 ![gradient-in-text](https://user-images.githubusercontent.com/29297788/43936847-e8cb7682-9c30-11e8-8159-921ecfded425.png)
+
+# `background-color`
+- Aplica cores sólidas ao background do elemento 
+- Valores: 
+  - `transparent` - Default. Não há cor no background 
+  - `colorName` - [colors](https://developer.mozilla.org/en-US/docs/Web/CSS/color_value)
+  - `#82a43a` - Hexadecimais 
+  - `rgb(50, 115, 220);` - RGB
+  - `rgba(50, 115, 220, 0.3);` - RGBA. 3 primeiros valores são do RGB.  
+  O 4º valor é para o canal alpha, define a opacidade da cor. Pode ir  
+  do 0 (transparente) até o 1 (opaco) 
+  - `hsl(14, 100%, 53%);` - HSL
+  - `hsla(14, 100%, 53%, 0.6);` - HSLA
