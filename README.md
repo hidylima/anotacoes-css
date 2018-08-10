@@ -893,3 +893,76 @@ exemplo 3:
 ```
 
 ![pb](https://user-images.githubusercontent.com/29297788/43809256-a25fad80-9a87-11e8-9878-4e10aa0a2777.jpg)
+
+# `background-clip`
+- Define o quanto o fundo deve se estender dentro do elemento 
+  - Valores: 
+    - `border-box` - Valor padrão. Permite que o background se  
+    estenda completamente ao longo do elemento, mesmo sob a borda  
+    (exemplo 1)
+    - `padding-box` - O background se estende apenas até o limite  
+    da borda do elemento (exemplo 2)
+    - `content-box` - O background se estende apenas no limite do  
+    conteúdo. Não inclui o preenchimento nem a borda (exemplo 3)
+    - `text` - O background é renderizado apenas no interior do  
+    texto em primeiro plano (exemplo 4). 
+      - No momento em que este texto foi escrito, ainda é uma api  
+      experimental. Não deve ser usada no código em produção 
+
+exemplo 1: 
+
+```css
+.container {
+  height: 300px;
+  width: 500px;
+  border: 10px dashed rgba(0, 0, 0, .5);
+  background-color: #05ffb0;
+  background-clip: border-box;
+}
+```
+
+![bb](https://user-images.githubusercontent.com/29297788/43936311-64252c0e-9c2e-11e8-8d4b-f717c1fe3cf0.png)
+
+exemplo 2:
+
+```css
+.container {
+  height: 300px;
+  width: 500px;
+  padding: 50px;
+  border: 10px dashed rgba(0, 0, 0, .5);
+  background-color: #05ffb0;
+  background-clip: padding-box;
+}
+```
+
+![pb](https://user-images.githubusercontent.com/29297788/43936462-f737cd1c-9c2e-11e8-8a57-fa35f20220b9.png)
+
+exemplo 3: 
+
+```css
+.container {
+  height: 300px;
+  width: 500px;
+  padding: 80px 40px;
+  border: 10px dashed rgba(0, 0, 0, .5);
+  background-color: #05ffb0;
+  background-clip: content-box;
+}
+```
+
+![cb](https://user-images.githubusercontent.com/29297788/43936601-9e3b2460-9c2f-11e8-8cd4-fa49b033ea02.png)
+
+exemplo 4: 
+
+```css
+.container {
+  width: 500px;
+  background: linear-gradient(yellow, red);
+  background-clip: text;
+  -webkit-background-clip: text;
+  color: transparent;
+}
+```
+
+![gradient-in-text](https://user-images.githubusercontent.com/29297788/43936847-e8cb7682-9c30-11e8-8159-921ecfded425.png)

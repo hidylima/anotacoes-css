@@ -4,13 +4,14 @@
   padding: 0;
 }
 
+p {
+  font-size: 80px;
+}
+
 .container {
-  height: 500px;
   width: 500px;
-  border: 30px solid rgba(0,0,0, .3);
-  padding: 40px;
-  background: url(./img/pug.png);
-  background-color: red;
-  background-repeat: no-repeat;
-  background-origin: padding-box;
+  background: linear-gradient(yellow, red);
+  background-clip: text;
+  -webkit-background-clip: text;
+  color: transparent;
 }
