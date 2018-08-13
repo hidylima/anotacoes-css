@@ -1004,3 +1004,235 @@ exemplo 4:
   do 0 (transparente) até o 1 (opaco) 
   - `hsl(14, 100%, 53%);` - HSL
   - `hsla(14, 100%, 53%, 0.6);` - HSLA
+
+# A metodologia BEM
+- BEM (Block, Element, Modifier)
+- Convenção que sugere uma forma estruturada de nomear classes css  
+- Passamos mais tempo lendo código do que escrevendo 
+  - Quanto mais claro, simples e legível, melhor 
+- O nome das classes é baseado na proposta do elemento em si 
+  - Não usar id ou tag como seletor 
+    - Id prejudica o conceito de reutilização 
+  - Não nomear classes baseadas no estado ou estilo 
+- Referencias: 
+  - [en.bem.info](https://en.bem.info/methodology/quick-start/)
+  - [Edgard Kozlowski - CSS Legível e escalável com BEM CSS - RSV Dev Summit 2017](https://youtu.be/2D4oIcV7eT8)
+
+## Block 
+- Estrutura: 
+  - `block-name` ou `block`
+- Componente reutilizável 
+- Não deve influenciar seu ambiente, ou seja, a geometria externa (margin,  
+posicionamento) não deve ser definida nele 
+  - Isso garante a independência do bloco, possibilitando que ele seja  
+  movido de um local para outro e, portanto, tornando-se reutilizável 
+- Seu código pode ser reutilizado e não depende de componentes de  
+  outras páginas sendo implementados 
+- Podem ser aninhados, em quantos níveis forem necessários (exemplo 1)
+- Não é dependente da página. Exemplos:
+  - Card do produto
+  - Header 
+  - Nav 
+  - Sidebar
+  - Botão 
+
+exemplo 1: 
+
+```html
+  <!-- 'header' block -->
+  <header class="header">
+    <!-- nested 'logo' block -->
+    <div class="logo"></div>
+    <!-- nested 'search-form' block -->
+    <form class="search-form"></form>
+  </header>
+```
+
+## Element 
+- Estrutura: 
+  - `block-name__element-name`
+  - O nome do elemento é separado do nome do bloco por 2 underscores  
+  (exemplo 1)
+- Parte que compõe um bloco e não pode ser usada separada dele 
+  - Um elemento é sempre dependende de seu bloco 
+  - É uma parte do todo
+  - Sempre faz parte de um bloco, não deve ser usado fora dele 
+- Seu nome é baseado em seu propósito, e não em seu estado 
+- Podem ser aninhados, em quantos níveis forem necessários (exemplo 3)
+  - E a estrutura do bloco, no css, será sempre representada como uma  
+  lista de elementos, segundo a metodologia BEM (exemplo 4)
+  - Isso permite que a estrutura do bloco seja modificada sem que  
+  seja necessário mudar o código de cada elemento (exemplo 5)
+    - E estrutura do bloco muda, mas as regras css para cada  
+    elemento e seus nomes continuam os mesmos 
+- É sempre parte de um bloco, e não de outro elemento 
+  - Ou seja, o nome do elemento não pode definir uma hierarquia  
+  como `block__elem1__elem2` (exemplo 2)
+
+exemplo 1: 
+
+```html
+<!-- 'search-form' block -->
+<form class="search-form">
+  <!-- 'input' element in the 'search-form' block -->
+  <input class="search-form__input">
+  <!-- 'button' element in the 'search-form' block -->
+  <button class="search-form__button">Search</button>
+</form>
+```
+
+exemplo 2 (estrutura incorreta): 
+
+```html
+<form class="search-form">
+  <div class="search-form__content">
+    <input class="search-form__content__input">
+    <button class="search-form__content__button">search</button>
+  </div>
+</form>
+```
+
+exemplo 3: 
+
+```html
+<div class="block">
+    <div class="block__elem1">
+        <div class="block__elem2">
+            <div class="block__elem3"></div>
+        </div>
+    </div>
+</div>
+```
+
+exemplo 4: 
+
+```css
+.block {}
+.block__elem1 {}
+.block__elem2 {}
+.block__elem3 {}
+```
+
+exemplo 5: 
+
+```html
+<div class="block">
+    <div class="block__elem1">
+        <div class="block__elem2"></div>
+    </div>
+
+    <div class="block__elem3"></div>
+</div>
+```
+
+## Modifier
+- Estrutura: 
+  - `block-name_modifier-name` ou `block-name__element-name_modifier-name`
+  - O nome do modifier é separado do nome do bloco ou do elemento por  
+  1 underscore 
+  - Não pode ser usado sozinho 
+- Uma entidade que define a aparência, estado ou comportamento de  
+um bloco ou elemento Exemplos: 
+  - Aparência: 
+    - Tamanho
+    - Theme
+  - Estado:
+    - Disabled
+    - Focused
+  - Comportamento: 
+    - Direção (`directions_left-top`)
+
+### Tipos de modificadores 
+#### Boolean:
+- Usados apenas quando a ausência ou a presença do modificador é  
+importante, e seu valor é irrelevante, por exemplo, `disabled`
+- Se um modificador booleano é especificado, presupõe-se que  
+seu valor seja `true` (exemplo 1)
+
+exemplo 1: 
+
+```html
+<!-- the 'search-form' block has the 'focused' boolean modifier -->
+<form class="search-form search-form_focused">
+  <input class="search-form__input">
+  
+  <!-- the 'button' element has the 'disabled' boolean modifier -->
+  <button class="search-form__button search-form__button_disabled">search</button>
+</form>
+```
+
+#### Key-value:
+- Usado quando o valor do modificador é importante, por exemplo,  
+um menu com o tema 'islands' (exemplo 1)
+- Estrutura: 
+  - `block-name_modifier-name_modifier_value`
+  - `block-name__element-name_modifier-name_modifier_value`
+
+exemplo 1: 
+
+```html
+<form class="search-form search-form_theme_islands">
+
+</form>
+```
+
+exemplo 2, botão que tem o modificador 'size' com o valor 'm': 
+
+```html
+<button class="block-name__button block-name__button_size_m">
+```
+
+## Mix
+- Técnica utilizada para usar diferentes entidades em um único DOM node  
+- Permite: 
+  - Combinar o comportamento e estilo de múltiplas entidades, sem  
+  duplicar o código
+  - Cria, semanticamente, um novo componente da interface, baseado  
+  em um já existente (exemplo 1)
+
+exemplo 1: 
+
+ ```html
+<!-- the 'header' block -->
+<header class="header">
+  <!-- 'search-form' block is mixed with the 'search-form' element from the 'header' block -->
+  <div class="search-form header__search-form"></div>
+</header>
+
+<!-- 
+- Neste exemplo, foram combinados os estilos e comportamentos do bloco  
+'search-form' e do elemento 'search-form' do bloco 'header'
+- Essa abordagem permite setar a geometria externa e posicionamento  
+no elemento 'header__search-form'
+- O bloco 'search-form' permanece universal 
+- Ou seja, é possível usar o bloco em qualquer outro ambiente, pois  
+ele não contém padding 
+-->
+ ```
+
+## Estrutura de pastas e arquivos 
+- A abordagem de componentes do BEM também é aplicada a estrutura de  
+pastas e arquivos 
+- A implementação de blocos, elementos e modificadores é dividida de  
+forma independente das tecnologias usadas e seus respectivos arquivos,  
+ou seja, blocos, elementos e modificadores podem ser conectados  
+individualmente 
+- Características: 
+  - Um único bloco corresponde a uma única pasta
+  - O bloco e a pasta possuem o mesmo nome
+    - Exemplos: 
+      - O bloco 'header' está na pasta `header/`
+      - O bloco 'menu' está na pasta `menu/`
+  - A implementação de um bloco é dividida em arquivos de tecnologias  
+  diferentes 
+    - Exemplos: 
+      - `header.css`
+      - `header.js`
+  - A pasta do bloco é a pasta root para as subpastas de seus elementos  
+  e modificadores 
+  - Nomes de pastas de elementos começam com um duplo underscore `__`
+    - Exemplos: 
+      - `__header/`
+      - `__logo/`
+      - `__menu/`
+      - `__item/`
