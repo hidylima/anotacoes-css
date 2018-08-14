@@ -1035,6 +1035,10 @@ posicionamento) não deve ser definida nele
   - Nav 
   - Sidebar
   - Botão 
+- Para prevenir que possíveis bibliotecas a serem usadas no projeto  
+causem conflito entre nomes de classes, é possível utilizar, nos blocos  
+um prefixo com o nome do projeto abreviado 
+  - Exemplo: `rm-header`
 
 exemplo 1: 
 
@@ -1127,7 +1131,7 @@ exemplo 5:
 
 ## Modifier
 - Estrutura: 
-  - `block-name_modifier-name` ou `block-name__element-name_modifier-name`
+  - `block-name_modifier_name` ou `block-name__element-name_modifier_name`
   - O nome do modifier é separado do nome do bloco ou do elemento por  
   1 underscore 
   - Não pode ser usado sozinho 
@@ -1146,6 +1150,9 @@ um bloco ou elemento Exemplos:
 #### Boolean:
 - Usados apenas quando a ausência ou a presença do modificador é  
 importante, e seu valor é irrelevante, por exemplo, `disabled`
+- Estrutura do nome completo de um modificador: 
+  - `block-name_modifier-name`
+  - `block-name__element-name_modifier-name`
 - Se um modificador booleano é especificado, presupõe-se que  
 seu valor seja `true` (exemplo 1)
 
@@ -1165,8 +1172,8 @@ exemplo 1:
 - Usado quando o valor do modificador é importante, por exemplo,  
 um menu com o tema 'islands' (exemplo 1)
 - Estrutura: 
-  - `block-name_modifier-name_modifier_value`
-  - `block-name__element-name_modifier-name_modifier_value`
+  - `block-name_modifier-name_modifier-value`
+  - `block-name__element-name_modifier-name_modifier-value`
 
 exemplo 1: 
 
@@ -1236,3 +1243,44 @@ individualmente
       - `__logo/`
       - `__menu/`
       - `__item/`
+  - Nomes de pastas de modificadores começam com um único  
+  underscore `_`
+    - Exemplos: 
+      - `header/_fixed/`
+      - `menu/_theme_islands/`
+  - Implementações de elementos e modificadores são divididos em  
+  arquivos de diferentes tecnologias 
+    - Exemplos: 
+      - `header__input.js`
+      - `header_theme_islands.css`
+- Essa estrutura de arquivos pressupõe que, na produção, o código  
+será desenvolvido em arquivos de projeto compartilhados.
+
+Exemplo de estrutura: 
+
+```
+search-form/                           # Pasta do bloco search-form
+
+    __input/                           # Subpasta do elemento search-form__input
+        search-form__input.css         # Implementação CSS do 
+                                       # elemento search-form__input 
+        search-form__input.js          # Implementação JS do 
+                                       # elemento search-form__input 
+
+    __button/                          # Subpasta do elemento 
+                                       # search-form__button
+        search-form__button.css
+        search-form__button.js
+
+    _theme/                            # Subpasta do modificador 
+                                       # search-form_theme
+        search-form_theme_islands.css  # Implementação CSS do bloco search-form 
+                                       # que tem o modificador theme com o valor 
+                                       # islands
+        search-form_theme_lite.css     # Implementação CSS do bloco search-form 
+                                       # que tem o modificador theme com o valor 
+                                       # lite
+
+    search-form.css                    # Implementação CSS do bloco search-form 
+    search-form.js                     # Implementação JS do bloco search-form 
+```
