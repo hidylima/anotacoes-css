@@ -4,11 +4,18 @@
   padding: 0;
 }
 
-p {
-  font-size: 80px;
+body {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 5rem;
 }
 
-.container {
-  min-width: 500px;
-  background: linear-gradient(yellow, red);
+p::before {
+  content: '';
+  background: red;
+  display: block;
+  width: 10px;
+  height: 10px;
 }

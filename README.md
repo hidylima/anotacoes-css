@@ -1284,3 +1284,102 @@ search-form/                           # Pasta do bloco search-form
     search-form.css                    # Implementação CSS do bloco search-form 
     search-form.js                     # Implementação JS do bloco search-form 
 ```
+
+# [Before and After pseudo elements explained - part one: how they work](https://youtu.be/zGiirUiWslI)
+Before e After são boas maneiras de se adicionar estilos extras à uma  
+aplicação web, evitando a adição de marcações desnecessárias de CSS. 
+
+Exemplo inicial com um parágrafo no meio da página: 
+
+```html
+<body>
+
+  <p>conteúdo genérico aqui</p>
+
+</body>
+```
+
+```css
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 5rem;
+}
+```
+
+![image](https://user-images.githubusercontent.com/29297788/46588174-ebbbce80-ca6d-11e8-9023-915b0e444399.png)
+
+É possível então selecionar os pseudo-elementos desse parágrafo: `::before`  
+e `::after`. 
+
+É possível selecionar o pseudo-elemento de um elemento com a sintaxe: 
+
+```css
+p::before {
+  
+}
+```
+
+Lembrando que pseudo-elementos são representados com `::`, enquanto  
+pseudo-classes são representadas com `:`. 
+
+Um pseudo-elemento só existe e funciona quando sua primeira linha é  
+um `content`: 
+
+```css
+p::before {
+  content: '';
+}
+```
+
+Agora, será feito com que esse pseudo-elemento tenha um comportamento de  
+bloco, cor de fundo vermelha, altura e largura de 10px. 
+
+```css
+p::before {
+  content: '';
+  background: red;
+  display: block;
+  width: 10px;
+  height: 10px;
+}
+```
+
+![image](https://user-images.githubusercontent.com/29297788/46588267-d182f000-ca6f-11e8-8693-77555a31ffd3.png)
+
+É importante observar que, no devtools, há um `::before` **dentro** do  
+`<p>`: 
+
+![image](https://user-images.githubusercontent.com/29297788/46588284-27579800-ca70-11e8-8252-9f55f0676f5c.png)
+
+Portanto, o pseudo-elemento `::before` não insere um elemento antes da tag,  
+mas sim **antes do conteúdo da tag**.
+
+Se é uma `<div>`, um pseudo-elemento será inserido antes do **conteúdo** da  
+div. 
+
+O mesmo vale para o pseudo-elemento `::after`. 
+
+```css
+/* ... */
+p::after {
+  content: '';
+  background: red;
+  display: block;
+  width: 10px;
+  height: 10px;
+}
+```
+
+![image](https://user-images.githubusercontent.com/29297788/46588335-eca22f80-ca70-11e8-9ecd-571a8db37c35.png)
+
+É importante saber que **pseudo-elementos não funcionam em imagens**. 
+
